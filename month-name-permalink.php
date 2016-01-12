@@ -11,7 +11,8 @@ defined('ABSPATH') or die("Direct access prohibited");
 /**
  * Inspiration from (https://gist.github.com/rogerhub/8306875)
  * Plugin enables use of monthname (january, june) and monthcode (jan, jun) in permalinks
- * Supports permalinks in the form of /2016/nov/23/post-name or /2016/november/23/post-name
+ * When using <code>%monthcode%</code>, permalinks look like: http://www.example.com/2016/nov/23/post-name 
+ * and when using <code>%monthname%</code>, permalinks look like: http://www.example.com/2016/november/23/post-name
 */
 
 class Month_Name_Permalink {
@@ -56,8 +57,11 @@ public static $monthcodes = array(
  * Registers all required hooks
  */
 public static function init() {
+	
     add_rewrite_tag( '%monthname%', '(' . implode('|', self::$monthnames) . ')' );
+    
     add_rewrite_tag( '%monthcode%', '(' . implode('|', self::$monthcodes) . ')' );
+    
     add_rewrite_rule(
         '^([0-9]{4})/(' . implode( '|', self::$monthnames ) . ')/([0-9]{1,2})/(.*)?',
         'index.php?name=$matches[4]',
@@ -69,15 +73,15 @@ public static function init() {
         'top'
     );       
 
-        add_rewrite_rule(        
-            '^([^/]*)/([0-9]+)/?',        
-            'index.php?p=$matches[2]',        
-            'top' );
+	add_rewrite_rule(        
+		'^([^/]*)/([0-9]+)/?',        
+		'index.php?p=$matches[2]',        
+		'top' );
 
-        add_rewrite_rule(        
-            '^([0-9]+)/([^/]*)/?',        
-            'index.php?p=$matches[1]',        
-            'top' );
+	add_rewrite_rule(        
+		'^([0-9]+)/([^/]*)/?',        
+		'index.php?p=$matches[1]',        
+		'top' );
 
 }
 /**
