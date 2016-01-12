@@ -25,4 +25,5 @@ After installing and activating the plugin:
   `/%year%/%monthcode%/%day%/%postname%/`
   resulting premalink will look like **http://www.example.com/2016/nov/23/post-name**
 
+
 3. Save the changes
