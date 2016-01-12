@@ -7,7 +7,7 @@ Supports permalinks in the form of /2016/nov/23/post-name or /2016/november/23/p
 
 ## Frequently Asked Questions
 
-### How do i use it? 
+### How to use it? 
 
 After installing and activating the plugin: 
 
