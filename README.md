@@ -15,13 +15,13 @@ After installing and activating the plugin:
 
 2. Select "Custom Structure" 
 
-- to use monthname in the permalink enter the following structure
+  - to use monthname in the permalink enter the following structure
   `/%year%/%monthname%/%day%/%postname%/`
   resulting permalink will look like **http://www.example.com/2016/november/23/post-name**
 
   OR 
 
-- to use monthcode in the permalink enter the following structure
+  - to use monthcode in the permalink enter the following structure
   `/%year%/%monthcode%/%day%/%postname%/`
   resulting premalink will look like **http://www.example.com/2016/nov/23/post-name**
 
